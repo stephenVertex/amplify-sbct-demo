@@ -13,15 +13,6 @@ const schema = a.schema({
     })
     .authorization((allow) => [allow.publicApiKey()]),
 
-  Task: a
-    .model({
-	name: a.string(),
-	description: a.string(),
-	timeEstimate: a.integer().optional(),
-	scheduledDate: a.datetime().optional(),
-	tags: a.list(a.string()),
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
