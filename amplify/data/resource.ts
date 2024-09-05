@@ -21,9 +21,9 @@ const schema = a.schema({
         .model({
             name: a.string(),
             description: a.string(),
-            estimated_time_mins: a.integer().optional(),
-            priority: a.integer().optional(),
-            tags: a.string().array(),
+            estimated_time_mins: a.integer(), // Fields are optional by default, but you can make them required
+            priority: a.integer(), // Lets assume 1 to 5, with 1 being the lowest
+            tags: a.string().array(), // This is the proper syntax for making a field into an array
         })
         .authorization((allow) => [allow.publicApiKey()]),
 });
