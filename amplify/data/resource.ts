@@ -23,7 +23,8 @@ const schema = a.schema({
             description: a.string(),
             estimated_time_mins: a.integer(), // Fields are optional by default, but you can make them required
             priority: a.integer(), // Lets assume 1 to 5, with 1 being the lowest
-            tags: a.string().array(), // This is the proper syntax for making a field into an array
+            tags: a.string().array(), // This is the proper syntax for making a field into an array,
+	    scheduled_date: a.datetime(), 
         })
         .authorization((allow) => [allow.publicApiKey()]),
 });
