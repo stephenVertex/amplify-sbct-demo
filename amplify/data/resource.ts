@@ -12,6 +12,11 @@ const schema = a.schema({
       content: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
+  OKR: a.model({
+    title: a.string(),
+    description: a.string(),
+  })
+    .authorization((allow) => [allow.publicApiKey()]),
 
 });
 
