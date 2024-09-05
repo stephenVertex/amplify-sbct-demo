@@ -23,7 +23,7 @@ const schema = a.schema({
             description: a.string(),
             estimated_time_mins: a.integer().optional(),
             priority: a.integer().optional(),
-            tags: a.array(a.string()),
+            tags: a.string().array(),
         })
         .authorization((allow) => [allow.publicApiKey()]),
 });
